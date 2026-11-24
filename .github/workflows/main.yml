@@ -12,5 +12,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Say hello
-        run: echo "Hello from my first pipeline!"
+      - name: Initialize Repo
+        run: 
+         echo "This is Farhan Molvi Repo!"
+         uname -a
+
+      - name: Check the Docker Installation
+        run: 
+           docker
+           docker images
+
+      - name: Run Docker Container
+        run:
+           docker run Hello-world
+      
+        
