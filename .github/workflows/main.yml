@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Initialize Repo
         run: |
@@ -25,6 +25,6 @@ jobs:
 
       - name: Run Docker Container
         run:
-           docker run Hello-world
+           docker run hello-world
       
         
