@@ -13,13 +13,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Initialize Repo
-        run: 
+        run: |
          echo "This is Farhan Molvi Repo!"
          uname -a
 
       - name: Check the Docker Installation
-        run: 
-           docker
+        run: |
+           docker 
+           docker --version
            docker images
 
       - name: Run Docker Container
