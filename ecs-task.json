@@ -1,11 +1,11 @@
 {
   "family": "node-app-tasks",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::559050236729:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::767397727846:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "node-web-app",
-      "image": "559050236729.dkr.ecr.us-east-1.amazonaws.com/dev/nodeimages:latest",
+      "image": "767397727846.dkr.ecr.ap-south-1.amazonaws.com/dev/nodeimages:latest",
       "essential": true,
       "portMappings": [
         {
@@ -13,7 +13,16 @@
           "hostPort": 8080,
           "protocol": "tcp"
         }
-      ]
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/node-app-tasks",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group": "true"
+        }
+      }
     }
   ],
   "requiresCompatibilities": ["FARGATE"],
