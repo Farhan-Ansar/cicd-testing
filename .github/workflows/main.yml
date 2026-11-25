@@ -20,7 +20,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1 
+          aws-region: ap-south-1 
 
       - name: Login to Amazon Elastic Container Registry
         id: login-ecr
@@ -28,7 +28,7 @@ jobs:
 
       - name: Push the Image to AWS ECR
         run: |
-            docker push 559050236729.dkr.ecr.us-east-1.amazonaws.com/dev/nodeimages:latest
+            docker push 767397727846.dkr.ecr.ap-south-1.amazonaws.com/dev/nodeimages:latest
 
       - name: Revisions on ECS with Updated Docker Images
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
